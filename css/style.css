@@ -1,0 +1,53 @@
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+ul,li{
+    list-style: none;
+    /* removes bullet point */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertical center */
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+nav ul { /* UL elements within Nav */
+    display: flex;
+    gap: 1rem;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: limegreen;
+    position: fixed;
+    top: 0;
+    left: 100vw; /* Shift to the left offscreen */
+    z-index: 1000; /* goes on top of 1000 layers of the document. Excessive, but guarantees output */
+    transition: all .5s; /* Sets all movements to .5 seconds */
+}
+
+/* If overlay class has a secondary class named active, move that active overlay object to left */
+.overlay.active {
+    left: 0;
+}

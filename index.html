@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+    <!-- Headers are descriptve to a search engine -->
+    <!-- A div may or may not be interpreted as important -->
+    <header>
+        <h1>Airbnb</h1>
+        <!-- Nav helps search engine understand page layout -->
+        <nav>
+            <ul>
+                <!-- place list items in an unsorted list -->
+                <li>
+                    <a href="">Stays</a>
+                </li>
+                <li>
+                    <a href="">Experiences</a>
+                </li>
+                <li>
+                    <a href="">Online experiences</a>
+                </li>
+            </ul>
+        </nav>
+        <button id="menuBtn">Open Menu</button>
+    </header>
+    <!-- For now: class for styling, ID for javascript -->
+    <div class="overlay" id="mobileMenu">
+        <!-- Id gives unique name for Javascript identification -->
+        <button id="closeBtn">Close menu</button>
+        Mobile menu content goes here.
+    </div>
+    <script src="js/main.js"></script>
+    <!-- You want to load your javasacript, typically, after the rest of the document is already in play. -->
+</body>
+</html>
