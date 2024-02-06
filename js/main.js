@@ -49,7 +49,7 @@ const rooms = [
 rooms.forEach((room) => {
   const roomArticle = document.createElement('article');
   roomArticle.classList.add('room');
-  /* Adds the "room" css class to room article */
+  /* Add the "room" css class to room article */
 
   const roomNameElement = document.createElement('h3');
   roomNameElement.classList.add('room--name');
