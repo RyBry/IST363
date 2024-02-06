@@ -1,89 +1,125 @@
 /* For help understnaidng flexbox: https://ist363-resources.vercel.app/ */
 /* For icons, check out this link: https://fontawesome.com/ */
 
-html, body, h1, h2, h3, h4, h5, h6, p, ul, li, button {
-    margin: 0;
-    padding: 0;
-    font: inherit;
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+button {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
-ul,li{
-    list-style: none;
-    /* removes bullet point */
+ul,
+li {
+  list-style: none;
+  /* removes bullet point */
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-:root { /* this is the "brain" of a CSS stylesheet. Store variables here! */
-    --airbnb-pink: #FF385C;
+:root {
+  /* this is the "brain" of a CSS stylesheet. Store variables here! */
+  --airbnb-pink: #ff385c;
 }
 
-body{
-    background-color: yellow;
-    margin: 0;
-    padding: 0;
+body {
+  background-color: yellow;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background-color: white;
-    padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
-    display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
+  background-color: white;
+  padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
+  display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
                     NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/
-    justify-content: space-between; /*Left-Right. Takes all immediate children in a header box and spaces them out*/
-    align-items: center; /* Up-Down. Provides a fix to the height stetching issue. You can vertically align them up, down, etc..*/
+  justify-content: space-between; /*Left-Right. Takes all immediate children in a header box and spaces them out*/
+  align-items: center; /* Up-Down. Provides a fix to the height stetching issue. You can vertically align them up, down, etc..*/
 }
 
-.logo{
-    width: 150px;
-    height: auto;
-    fill: var(--airbnb-pink); /* user the variable we created in the "root" CSS tag */
+.logo {
+  width: 150px;
+  height: auto;
+  fill: var(
+    --airbnb-pink
+  ); /* user the variable we created in the "root" CSS tag */
 }
 
-nav ul { /* UL elements within Nav */
-    display: flex;
-    gap: 1rem; /*spaces elements out horizontally with a hard, non-scaling value*/
+nav ul {
+  /* UL elements within Nav */
+  display: flex;
+  gap: 1rem; /*spaces elements out horizontally with a hard, non-scaling value*/
 }
 
 nav a {
-    font-family: Arial;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color:black;
-    text-decoration: none; /* Removes the traditional hyperlink underlines. */
-    transition: all 0.15s;
+  font-family: Arial;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none; /* Removes the traditional hyperlink underlines. */
+  transition: all 0.15s;
 }
 
-nav a:hover, nav a:focus { /* Specifies how hyperlinked sections within header behave when mouse hovers or "tab" selector moves throughout document */
-    color:var(--airbnb-pink);
-    text-decoration: underline;
+nav a:hover,
+nav a:focus {
+  /* Specifies how hyperlinked sections within header behave when mouse hovers or "tab" selector moves throughout document */
+  color: var(--airbnb-pink);
+  text-decoration: underline;
 }
 
-.btn-ui{
-    padding: 1rem;
-    background-color: transparent; /* Set grey btn background to transprent so that we can only show the .svg */
-    border: 1px solid var(--airbnb-pink);
-    cursor: pointer; /* cursor type is hand when hover over btn */
+.btn-ui {
+  padding: 1rem;
+  background-color: transparent; /* Set grey btn background to transprent so that we can only show the .svg */
+  border: 1px solid var(--airbnb-pink);
+  cursor: pointer; /* cursor type is hand when hover over btn */
 }
 
-.btn-ui svg{
-    width: 2rem;
-    height: auto;
-    fill: var(--airbnb-pink);
+.btn-ui svg {
+  width: 2rem;
+  height: auto;
+  fill: var(--airbnb-pink);
 }
 
 .overlay {
-    width: 100vw;
-    height: 100vh;
-    background-color: limegreen;
-    position: fixed;
-    top: 0;
-    left: 100vw; /* Shift to the left offscreen */
-    z-index: 1000; /* goes on top of 1000 layers of the document. Excessive, but guarantees output */
-    transition: all .5s; /* Sets all movements to .5 seconds */
+  width: 100vw;
+  height: 100vh;
+  background-color: limegreen;
+  position: fixed;
+  top: 0;
+  left: 100vw; /* Shift to the left offscreen */
+  z-index: 1000; /* goes on top of 1000 layers of the document. Excessive, but guarantees output */
+  transition: all 0.5s; /* Sets all movements to .5 seconds */
 }
 
 /* If overlay class has a secondary class named active, move that active overlay object to left */
 .overlay.active {
-    left: 0;
+  left: 0;
+}
+
+.room {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid green;
+}
+
+.room--name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.room--description {
+  font-size: 1.5rem;
+  font-family: Arial;
+  font-style: italic;
 }
