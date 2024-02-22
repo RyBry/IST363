@@ -1,5 +1,9 @@
 /* For help understnaidng flexbox: https://ist363-resources.vercel.app/ */
 /* For icons, check out this link: https://fontawesome.com/ */
+// type to watch this file for changes & convert to standard css: "sass --watch sass/style.scss:css/style.css"
+
+$color_orange: #d74100;
+
 html,
 body,
 h1,
@@ -16,7 +20,6 @@ button {
   padding: 0;
   font: inherit;
 }
-
 ul,
 li {
   list-style: none;
@@ -33,7 +36,7 @@ li {
 }
 
 body {
-  background-color: #d74100;
+  background-color: $color_orange;
   margin: 0;
   padding: 0;
 }
@@ -42,7 +45,7 @@ header {
   background-color: white;
   padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
   display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
-   NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/
+                    NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/
   justify-content: space-between; /*Left-Right. Takes all immediate children in a header box and spaces them out*/
   align-items: center; /* Up-Down. Provides a fix to the height stetching issue. You can vertically align them up, down, etc..*/
 }
@@ -50,7 +53,9 @@ header {
 .logo {
   width: 150px;
   height: auto;
-  fill: var(--airbnb-pink); /* user the variable we created in the "root" CSS tag */
+  fill: var(
+    --airbnb-pink
+  ); /* user the variable we created in the "root" CSS tag */
 }
 
 nav ul {
@@ -132,5 +137,3 @@ nav a:focus {
   font-family: Arial;
   font-size: 2rem;
 }
-
-/*# sourceMappingURL=style.css.map */
