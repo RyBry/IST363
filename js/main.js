@@ -3,6 +3,7 @@ console.log('Js has been loaded');
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const closeBtn = document.getElementById('closeBtn');
+const contentDiv = document.getElementById('content'); // hold onto the div "content" box ID in html
 
 // "event name", callback function
 menuBtn.addEventListener('click', function () {
@@ -119,7 +120,7 @@ const displayCategory = (category, properties) => {
   }); // end of forEach
 
   //2. Loop and append propertie
-  document.body.appendChild(sectionElement);
+  contentDiv.appendChild(sectionElement);
 }; // end of displayCategory
 
 Promise.all([

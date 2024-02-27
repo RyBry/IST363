@@ -1,3 +1,17 @@
+header {
+  background-color: white;
+  padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
+  display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
+       NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/
+  justify-content: space-between; /*Left-Right. Takes all immediate children in a header box and spaces them out*/
+  align-items: center; /* Up-Down. Provides a fix to the height stetching issue. You can vertically align them up, down, etc..*/
+}
+
+footer {
+  background-color: gray;
+  padding: 1rem;
+}
+
 /* For help understnaidng flexbox: https://ist363-resources.vercel.app/ */
 /* For icons, check out this link: https://fontawesome.com/ */
 html,
@@ -38,15 +52,6 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: white;
-  padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
-  display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
-   NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/
-  justify-content: space-between; /*Left-Right. Takes all immediate children in a header box and spaces them out*/
-  align-items: center; /* Up-Down. Provides a fix to the height stetching issue. You can vertically align them up, down, etc..*/
-}
-
 .logo {
   width: 150px;
   height: auto;
@@ -54,24 +59,18 @@ header {
 }
 
 nav ul {
-  /* UL elements within Nav */
   display: flex;
-  gap: 1rem; /*spaces elements out horizontally with a hard, non-scaling value*/
+  gap: 1rem;
 }
-
-nav a {
-  font-family: Arial;
-  font-size: 1.25rem;
+nav ul li a {
+  font-family: Arial, sans-serif;
   font-weight: bold;
+  font-size: 1rem;
   color: black;
-  text-decoration: none; /* Removes the traditional hyperlink underlines. */
-  transition: all 0.15s;
+  text-decoration: none;
 }
-
-nav a:hover,
-nav a:focus {
-  /* Specifies how hyperlinked sections within header behave when mouse hovers or "tab" selector moves throughout document */
-  color: var(--airbnb-pink);
+nav ul li a:hover, nav ul li a:focus {
+  color: #d74100;
   text-decoration: underline;
 }
 
