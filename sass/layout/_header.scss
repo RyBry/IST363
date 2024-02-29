@@ -1,5 +1,6 @@
+@use '../abstracts/vars';
 header {
-  background-color: white;
+  background-color: vars.$color_white;
   padding: 1rem; /* rem (root font size, 16px at "normal" mode) makes font size relative to browser-chosen text-size scale */
   display: flex; /*Takes all immediate children and places them side-by-side (instead of vertically) 
                         NOTE: If you don't specify a height, then all elements will be stretched to the height of the parent header*/

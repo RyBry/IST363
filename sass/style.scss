@@ -1,46 +1,15 @@
-@use './header';
-@use './footer';
-/* For help understnaidng flexbox: https://ist363-resources.vercel.app/ */
+@use './abstracts/vars';
+
+// if you provide an _index.scss file specifying usage order, you can import the whole folder instead of on a file-by-file basis
+@use './base';
+@use './layout';
+/* For help understanding flexbox: https://ist363-resources.vercel.app/ */
 /* For icons, check out this link: https://fontawesome.com/ */
-// type to watch this file for changes & convert to standard css: "sass --watch sass/style.scss:css/style.css"
-
-$color_orange: #d74100;
-$font_primary: Arial, sans-serif; //please use arial, use sans-serif as a backup
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li,
-button {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-ul,
-li {
-  list-style: none;
-  /* removes bullet point */
-}
-
-* {
-  box-sizing: border-box;
-}
+// manually type to watch this file for changes & convert to standard css: "sass --watch sass/style.scss:css/style.css"
 
 :root {
   /* this is the "brain" of a CSS stylesheet. Store variables here! */
   --airbnb-pink: #ff385c;
-}
-
-body {
-  background-color: $color_orange;
-  margin: 0;
-  padding: 0;
 }
 
 .logo {
@@ -58,7 +27,7 @@ nav {
     gap: 1rem;
     li {
       a {
-        font-family: $font-primary;
+        font-family: vars.$font-primary;
         font-weight: bold;
         font-size: 1rem;
         color: black;
@@ -66,7 +35,7 @@ nav {
         // Focus (below) supports tab-control highlighting. It can be written on the same line as hover, but Prettier won't allow it :(
         &:hover,
         &:focus {
-          color: $color_orange;
+          color: vars.$color_orange;
           text-decoration: underline;
         } //ampersand goes up to immediate top tag (which is "a")
       }
