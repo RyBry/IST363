@@ -40,44 +40,18 @@ const rooms = [
   },
 ];
 
-// function renderProperties(properties) {
-//   properties.forEach((room) => {
-//     const roomArticle = document.createElement('article');
-//     roomArticle.classList.add('room');
-//     /* Add the "room" css class to room article */
-
-//     const roomNameElement = document.createElement('h3');
-//     roomNameElement.classList.add('room--name');
-//     roomNameElement.textContent = room.name;
-
-//     const roomDescriptionElement = document.createElement('p');
-//     roomDescriptionElement.classList.add('room--description');
-//     roomDescriptionElement.textContent = room.description;
-
-//     const roomPriceElement = document.createElement('p');
-//     roomPriceElement.textContent = `Price: ${room.price}`;
-
-//     const roomGuestsElement = document.createElement('p');
-//     roomGuestsElement.textContent = `Guests: ${room.guests}`;
-
-//     roomArticle.appendChild(roomNameElement);
-//     roomArticle.appendChild(roomDescriptionElement);
-//     roomArticle.appendChild(roomPriceElement);
-//     roomArticle.appendChild(roomGuestsElement);
-
-//     document.body.appendChild(roomArticle);
-//   });
-// } // end of renderProperties
-
 const displayCategory = (category, properties) => {
   // console.log({category});
   const sectionElement = document.createElement('section');
   sectionElement.classList.add('category');
 
+  const containerDiv = document.createElement('div');
+  containerDiv.classList.add('container');
+
   const sectionTitle = document.createElement('h2');
   sectionTitle.textContent = category.label.plural;
 
-  sectionElement.appendChild(sectionTitle);
+  containerDiv.appendChild(sectionTitle);
 
   //1. Filter properties
   // Loop thorught properties, place the element into "property"
@@ -100,13 +74,9 @@ const displayCategory = (category, properties) => {
     return 0;
   });
 
-  // console.log({ filteredProperties });
   filteredProperties.forEach((property) => {
     const articleElement = document.createElement('article');
     articleElement.classList.add('property');
-
-    //const propertyTitle = document.createElement('h3');
-    //propertyTitle.classList.add('property--title');
 
     // Backticks allow writing HTML
     let propertyHtml = `
@@ -116,10 +86,12 @@ const displayCategory = (category, properties) => {
     `;
 
     articleElement.innerHTML = propertyHtml;
-    sectionElement.appendChild(articleElement);
+
+    containerDiv.appendChild(articleElement);
   }); // end of forEach
 
   //2. Loop and append propertie
+  sectionElement.appendChild(containerDiv);
   contentDiv.appendChild(sectionElement);
 }; // end of displayCategory
 

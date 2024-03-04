@@ -1,0 +1,15 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: limegreen;
+  position: fixed;
+  top: 0;
+  left: 100vw; /* Shift to the left offscreen */
+  z-index: 1000; /* goes on top of 1000 layers of the document. Excessive, but guarantees output */
+  transition: all 0.5s; /* Sets all movements to .5 seconds */
+
+  // you can also replace '.overlay' with '&', and this will automaticalyly replace the parent selector (.'overlay') during compilation
+  .overlay.active {
+    left: 0;
+  }
+}

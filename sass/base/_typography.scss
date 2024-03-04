@@ -1,22 +1,51 @@
 @use '../abstracts/vars';
-h1 {
-  font-size: 3rem;
-  font-family: vars.$font_primary;
-  font-weight: bold;
-  color: black;
-}
+@use '../abstracts/mixins';
 
-h2 {
-  font-size: 1rem;
-  font-family: vars.$font-primary;
-  font-weight: bold;
-  color: vars.$color_orange;
-}
-h3 {
+h1 {
   font-size: 2rem;
   font-family: vars.$font-primary;
   font-weight: bold;
-  color: vars.$color_red;
+  color: vars.$color_primary;
+  @include mixins.breakpoint(tablet) {
+    font-size: 2.5rem;
+  }
+  @include mixins.breakpoint(laptop) {
+    font-size: 3rem;
+  }
+  @include mixins.breakpoint(desktop) {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: vars.$font-primary;
+  font-weight: bold;
+  color: black;
+  @include mixins.breakpoint(tablet) {
+    font-size: 1.75rem;
+  }
+  @include mixins.breakpoint(laptop) {
+    font-size: 2rem;
+  }
+  @include mixins.breakpoint(desktop) {
+    font-size: 2.25rem;
+  }
+}
+h3 {
+  font-size: 1.1rem;
+  font-family: vars.$font-primary;
+  font-weight: bold;
+  color: black;
+  @include mixins.breakpoint(tablet) {
+    font-size: 1.3rem;
+  }
+  @include mixins.breakpoint(laptop) {
+    font-size: 1.5rem;
+  }
+  @include mixins.breakpoint(desktop) {
+    font-size: 1.7rem;
+  }
 }
 p {
   font-size: 1rem;

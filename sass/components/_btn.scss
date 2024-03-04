@@ -1,0 +1,14 @@
+@use '../abstracts/vars';
+
+.btn-ui {
+  padding: 1rem;
+  background-color: transparent; /* Set grey btn background to transprent so that we can only show the .svg */
+  border: 1px solid vars.$color_primary;
+  cursor: pointer; /* cursor type is hand when hover over btn */
+
+  svg {
+    width: 2rem;
+    height: auto;
+    fill: vars.$color_primary;
+  }
+}

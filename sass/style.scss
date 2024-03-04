@@ -1,102 +1,11 @@
-@use './abstracts/vars';
-
 // if you provide an _index.scss file specifying usage order, you can import the whole folder instead of on a file-by-file basis
-@use './base';
+@use './vendor'; // load the browser default wipe first.
+@use './base'; // load our custom default wipes
+@use './components';
 @use './layout';
+
 /* For help understanding flexbox: https://ist363-resources.vercel.app/ */
 /* For icons, check out this link: https://fontawesome.com/ */
 // manually type to watch this file for changes & convert to standard css: "sass --watch sass/style.scss:css/style.css"
 
-:root {
-  /* this is the "brain" of a CSS stylesheet. Store variables here! */
-  --airbnb-pink: #ff385c;
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  fill: var(
-    --airbnb-pink
-  ); /* user the variable we created in the "root" CSS tag */
-}
-
-nav {
-  //background-color: $color_orange;
-  ul {
-    display: flex;
-    gap: 1rem;
-    li {
-      a {
-        font-family: vars.$font-primary;
-        font-weight: bold;
-        font-size: 1rem;
-        color: black;
-        text-decoration: none; // gets rid of underline
-        // Focus (below) supports tab-control highlighting. It can be written on the same line as hover, but Prettier won't allow it :(
-        &:hover,
-        &:focus {
-          color: vars.$color_orange;
-          text-decoration: underline;
-        } //ampersand goes up to immediate top tag (which is "a")
-      }
-    }
-  }
-}
-
-.btn-ui {
-  padding: 1rem;
-  background-color: transparent; /* Set grey btn background to transprent so that we can only show the .svg */
-  border: 1px solid var(--airbnb-pink);
-  cursor: pointer; /* cursor type is hand when hover over btn */
-}
-
-.btn-ui svg {
-  width: 2rem;
-  height: auto;
-  fill: var(--airbnb-pink);
-}
-
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: limegreen;
-  position: fixed;
-  top: 0;
-  left: 100vw; /* Shift to the left offscreen */
-  z-index: 1000; /* goes on top of 1000 layers of the document. Excessive, but guarantees output */
-  transition: all 0.5s; /* Sets all movements to .5 seconds */
-}
-
 /* If overlay class has a secondary class named active, move that active overlay object to left */
-.overlay.active {
-  left: 0;
-}
-
-.room {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid green;
-}
-
-.room--name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: Arial;
-}
-
-.room--description {
-  font-size: 1.5rem;
-  font-family: Arial;
-  font-style: italic;
-}
-
-.category {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.category h2 {
-  font-weight: bold;
-  font-family: Arial;
-  font-size: 2rem;
-}

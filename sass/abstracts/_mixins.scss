@@ -1,0 +1,28 @@
+@mixin fontProperties($font, $size, $weight, $color) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin breakpoint($size) {
+  @if $size == 'phone' {
+    // If the calling media is less than 699px, then do whats in the body
+    @media (max-width: 699px) {
+      @content;
+    }
+  } @else if $size == 'tablet' {
+    @media (min-width: 700px) {
+      //color: green;
+      @content;
+    }
+  } @else if $size == 'laptop' {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $size == 'desktop' {
+    @media (min-width: 1140px) {
+      @content;
+    }
+  }
+}
