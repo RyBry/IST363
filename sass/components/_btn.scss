@@ -1,5 +1,37 @@
 @use '../abstracts/vars';
 
+// BEM style class design
+// When designing the main, "block" style class, define as many properties as you can
+.btn {
+  background-color: gray;
+  color: white;
+  padding: 1rem; // puts 1 rem on all sides
+  font-family: vars.$font_primary;
+  font-size: 1rem;
+  font-weight: bold;
+  // display: inline; is the default, and this makes it so that padding does not effect vertical height.
+  display: inline-block; // inline-block makes the element as wide and tall as padding is.
+  text-decoration: none;
+  border-radius: 0.5rem; // rounds off the corners
+
+  // Now lets create the modifier classes
+  &--primary {
+    background-color: vars.$color_primary;
+  }
+  &--secondary {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+  }
+  &--delete {
+    background-color: red;
+  }
+  &--small {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
 .btn-ui {
   padding: 1rem;
   background-color: transparent; /* Set grey btn background to transprent so that we can only show the .svg */

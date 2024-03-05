@@ -90,7 +90,7 @@ const displayCategory = (category, properties) => {
     containerDiv.appendChild(articleElement);
   }); // end of forEach
 
-  //2. Loop and append propertie
+  //2. Loop and append properties
   sectionElement.appendChild(containerDiv);
   contentDiv.appendChild(sectionElement);
 }; // end of displayCategory
