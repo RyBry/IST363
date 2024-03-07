@@ -43,15 +43,18 @@ const rooms = [
 const displayCategory = (category, properties) => {
   // console.log({category});
   const sectionElement = document.createElement('section');
-  sectionElement.classList.add('category');
+  sectionElement.classList.add('slider');
 
   const containerDiv = document.createElement('div');
-  containerDiv.classList.add('container');
+  containerDiv.classList.add('slider__container');
 
-  const sectionTitle = document.createElement('h2');
-  sectionTitle.textContent = category.label.plural;
+  const sliderGrid = document.createElement('div');
+  sliderGrid.classList.add('slider__grid');
 
-  containerDiv.appendChild(sectionTitle);
+  //const sectionTitle = document.createElement('h2');
+  //sectionTitle.textContent = category.label.plural;
+
+  //containerDiv.appendChild(sectionTitle);
 
   //1. Filter properties
   // Loop thorught properties, place the element into "property"
@@ -76,7 +79,7 @@ const displayCategory = (category, properties) => {
 
   filteredProperties.forEach((property) => {
     const articleElement = document.createElement('article');
-    articleElement.classList.add('property');
+    articleElement.classList.add('slider__item');
 
     // Backticks allow writing HTML
     let propertyHtml = `
@@ -87,10 +90,11 @@ const displayCategory = (category, properties) => {
 
     articleElement.innerHTML = propertyHtml;
 
-    containerDiv.appendChild(articleElement);
+    sliderGrid.appendChild(articleElement);
   }); // end of forEach
 
   //2. Loop and append properties
+  containerDiv.appendChild(sliderGrid);
   sectionElement.appendChild(containerDiv);
   contentDiv.appendChild(sectionElement);
 }; // end of displayCategory

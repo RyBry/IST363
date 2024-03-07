@@ -449,6 +449,7 @@ p {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+  background-color: yellow;
 }
 @media (min-width: 700px) {
   .container {
@@ -470,22 +471,6 @@ p {
   width: 150px;
   height: auto;
   fill: #ff385c; /* user the variable we created in the "root" CSS tag */
-}
-
-.room {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid green;
-}
-.room--name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: Arial;
-}
-.room--description {
-  font-size: 1.5rem;
-  font-family: Arial;
-  font-style: italic;
 }
 
 nav ul {
@@ -516,6 +501,59 @@ nav ul li a:hover, nav ul li a:focus {
 }
 .overlay .overlay.active {
   left: 0;
+}
+
+.room {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid green;
+}
+.room--name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Arial;
+}
+.room--description {
+  font-size: 1.5rem;
+  font-family: Arial;
+  font-style: italic;
+}
+
+.slider {
+  background-color: lightblue;
+}
+.slider__container {
+  background-color: limegreen;
+  overflow-x: scroll;
+  padding-left: 1rem;
+}
+@media (min-width: 700px) {
+  .slider__container {
+    padding-left: calc((100% - 700px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .slider__container {
+    padding-left: calc((100% - 1024px) / 2);
+  }
+}
+@media (min-width: 1140px) {
+  .slider__container {
+    padding-left: calc((100% - 1140px) / 2);
+  }
+}
+.slider__grid {
+  background-color: pink;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 1rem;
+  grid-auto-flow: column;
+}
+.slider__item {
+  background-color: white;
+  width: 300px;
+  height: 400px;
 }
 
 header {
